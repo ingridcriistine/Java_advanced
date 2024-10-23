@@ -12,8 +12,8 @@ public class App extends Application
 {
     public static void main(String[] args) {
         User user = new User();
-        user.setName("i");
-        user.setPassword("");
+        user.setName("ingrid");
+        user.setPassword("1234");
 
         Context ctx = new Context();
         ctx.begin();

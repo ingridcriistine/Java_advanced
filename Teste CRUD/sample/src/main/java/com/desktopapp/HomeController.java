@@ -98,13 +98,13 @@ public class HomeController implements Initializable {
         System.out.println(listaProdutos());
     }
 
-    private ObservableList<Product> listaProdutos() {
+    protected ObservableList<Product> listaProdutos() {
         Context ctx = new Context();
         ctx.begin();
         List<Product> lista = ctx.findAll(Product.class);
 
         List<ButtonsTable> buttons = lista.stream().map(n -> {
-            var btn = new ButtonsTable(n);
+            var btn = new ButtonsTable(n, tbProdutos, this);
             return btn;
         })
         .collect(Collectors.toList());
