@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="664.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.desktopapp.HomeController">
+   <children>
+      <ToolBar prefHeight="40.0" prefWidth="200.0">
+        <items>
+          <Button fx:id="mnLogin" mnemonicParsing="false" onMouseClicked="#backLogin" prefHeight="25.0" prefWidth="124.0" text="Login" textAlignment="CENTER" />
+            <Button fx:id="mnHome" alignment="CENTER" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" onMouseClicked="#updateHome" prefHeight="25.0" prefWidth="118.0" text="Home">
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+        </items>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </ToolBar>
+      <Pane prefHeight="615.0" prefWidth="576.0">
+         <children>
+            <Text layoutX="6.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Produtos" textAlignment="CENTER" x="50.0">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <Button fx:id="btCadastro" alignment="CENTER" contentDisplay="RIGHT" layoutX="397.0" layoutY="40.0" mnemonicParsing="false" onMouseClicked="#cadastrarProduto" prefHeight="25.0" prefWidth="148.0" text="Cadastrar Produto">
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+            <TableView fx:id="tbProdutos" layoutX="68.0" layoutY="146.0" prefHeight="285.0" prefWidth="464.0">
+              <columns>
+                <TableColumn fx:id="colID" prefWidth="45.0" text="ID" />
+                <TableColumn fx:id="colNome" prefWidth="106.0" text="Nome" />
+                  <TableColumn fx:id="colDescricao" prefWidth="89.0" text="Descrição" />
+                  <TableColumn fx:id="colPreco" prefWidth="105.0" text="Preço unitário" />
+                  <TableColumn fx:id="colEditar" minWidth="7.0" prefWidth="63.0" text="Editar" />
+                  <TableColumn fx:id="colDelete" minWidth="7.0" prefWidth="55.0" text="Excluir" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</VBox>
