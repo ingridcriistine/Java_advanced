@@ -67,6 +67,9 @@ public class HomeController implements Initializable {
     private TableColumn<Product, String> colDelete;
 
     @FXML
+    private TableColumn<Product, String> colEditar;
+
+    @FXML
     private void backLogin(MouseEvent e) throws Exception {
         Stage crrStage = (Stage) mnLogin
                 .getScene()
@@ -92,7 +95,8 @@ public class HomeController implements Initializable {
         colNome.setCellValueFactory(new PropertyValueFactory<>("name"));
         colDescricao.setCellValueFactory(new PropertyValueFactory<>("descricao"));
         colPreco.setCellValueFactory(new PropertyValueFactory<>("valorUnitario"));
-        colDelete.setCellValueFactory(new PropertyValueFactory<>("Button"));
+        colDelete.setCellValueFactory(new PropertyValueFactory<>("btDelete"));
+        colEditar.setCellValueFactory(new PropertyValueFactory<>("btEditar"));
 
         tbProdutos.setItems(listaProdutos());
         System.out.println(listaProdutos());

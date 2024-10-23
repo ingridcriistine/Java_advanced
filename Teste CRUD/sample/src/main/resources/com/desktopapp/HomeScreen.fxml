@@ -43,13 +43,14 @@
                   <Insets />
                </opaqueInsets>
             </Button>
-            <TableView fx:id="tbProdutos" layoutX="116.0" layoutY="147.0" prefHeight="285.0" prefWidth="369.0">
+            <TableView fx:id="tbProdutos" layoutX="68.0" layoutY="146.0" prefHeight="285.0" prefWidth="464.0">
               <columns>
                 <TableColumn fx:id="colID" prefWidth="45.0" text="ID" />
                 <TableColumn fx:id="colNome" prefWidth="106.0" text="Nome" />
                   <TableColumn fx:id="colDescricao" prefWidth="89.0" text="Descrição" />
-                  <TableColumn fx:id="colPreco" prefWidth="89.0" text="Preço unitário" />
-                  <TableColumn fx:id="colDelete" minWidth="7.0" prefWidth="39.0" text="X" />
+                  <TableColumn fx:id="colPreco" prefWidth="105.0" text="Preço unitário" />
+                  <TableColumn fx:id="colEditar" minWidth="7.0" prefWidth="63.0" text="Editar" />
+                  <TableColumn fx:id="colDelete" minWidth="7.0" prefWidth="55.0" text="Excluir" />
               </columns>
             </TableView>
          </children>
