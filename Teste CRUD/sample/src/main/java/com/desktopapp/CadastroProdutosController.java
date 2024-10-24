@@ -18,13 +18,27 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class CadastroProdutosController {
-    public static Scene CreateScene() throws Exception {
+    public static Scene CreateScene(User user) throws Exception {
         URL sceneUrl = CadastroProdutosController.class
                 .getResource("CadastroProdutos.fxml");
-        Parent root = FXMLLoader.load(sceneUrl);
+        FXMLLoader loader = new FXMLLoader(sceneUrl);
+        Parent root = loader.load();
         Scene scene = new Scene(root);
 
+        CadastroProdutosController controller = loader.getController();
+        controller.setUser(user);
+
         return scene;
+    }
+
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @FXML
@@ -74,7 +88,7 @@ public class CadastroProdutosController {
                 .getScene().getWindow();
         crrStage.close();
         var stage = new Stage();
-        var scene = HomeController.CreateScene();
+        var scene = HomeController.CreateScene(user);
         stage.setScene(scene);
         stage.show();
     }
@@ -86,7 +100,7 @@ public class CadastroProdutosController {
                 .getScene().getWindow();
         crrStage.close();
         var stage = new Stage();
-        var scene = HomeController.CreateScene();
+        var scene = HomeController.CreateScene(user);
         stage.setScene(scene);
         stage.show();
     }

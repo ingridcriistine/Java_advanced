@@ -14,8 +14,15 @@
    <children>
       <ToolBar prefHeight="40.0" prefWidth="200.0">
         <items>
-          <Button fx:id="mnLogin" mnemonicParsing="false" onMouseClicked="#backLogin" prefHeight="25.0" prefWidth="124.0" text="Login" textAlignment="CENTER" />
-            <Button fx:id="mnHome" alignment="CENTER" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" onMouseClicked="#updateHome" prefHeight="25.0" prefWidth="118.0" text="Home">
+            <Button fx:id="mnHome" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#updateHome" prefHeight="25.0" prefWidth="118.0" text="Produtos">
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+            <Button fx:id="mnPerfil" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#perfil" prefHeight="25.0" prefWidth="118.0" text="Perfil">
                <padding>
                   <Insets right="10.0" />
                </padding>
@@ -30,12 +37,12 @@
       </ToolBar>
       <Pane prefHeight="615.0" prefWidth="576.0">
          <children>
-            <Text layoutX="6.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Produtos" textAlignment="CENTER" x="50.0">
+            <Text layoutX="18.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Produtos" textAlignment="CENTER" x="50.0">
                <font>
                   <Font size="22.0" />
                </font>
             </Text>
-            <Button fx:id="btCadastro" alignment="CENTER" contentDisplay="RIGHT" layoutX="397.0" layoutY="40.0" mnemonicParsing="false" onMouseClicked="#cadastrarProduto" prefHeight="25.0" prefWidth="148.0" text="Cadastrar Produto">
+            <Button fx:id="btCadastro" alignment="CENTER" contentDisplay="RIGHT" layoutX="384.0" layoutY="38.0" mnemonicParsing="false" onMouseClicked="#cadastrarProduto" prefHeight="25.0" prefWidth="148.0" text="Cadastrar Produto">
                <padding>
                   <Insets right="10.0" />
                </padding>

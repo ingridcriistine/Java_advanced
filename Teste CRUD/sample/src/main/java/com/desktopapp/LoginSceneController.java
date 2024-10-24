@@ -1,10 +1,8 @@
 package com.desktopapp;
 
 import java.net.URL;
-import java.util.List;
 
 import com.desktopapp.model.User;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -102,7 +100,7 @@ public class LoginSceneController {
                 .getScene().getWindow();
         crrStage.close();
         var stage = new Stage();
-        var scene = HomeController.CreateScene();
+        var scene = HomeController.CreateScene(user);
         stage.setScene(scene);
         stage.show();
     }

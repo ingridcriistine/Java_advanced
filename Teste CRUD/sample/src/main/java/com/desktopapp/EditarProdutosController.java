@@ -1,26 +1,21 @@
 package com.desktopapp;
 
 import java.net.URL;
-import java.util.ResourceBundle;
 
 import com.desktopapp.model.Product;
 import com.desktopapp.model.User;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class EditarProdutosController {
-    public static Scene CreateScene(Product product) throws Exception {
+    public static Scene CreateScene(Product product, User user) throws Exception {
 
         
         URL sceneUrl = EditarProdutosController.class
@@ -34,11 +29,22 @@ public class EditarProdutosController {
         controller.tfDescricao.setText(product.getDescricao());
         controller.tfValorUnitario.setText(product.getValorUnitario());
         controller.setProduct(product);
+        controller.setUser(user);
         
         return scene;
     }
 
     protected Product product;
+    
+    protected User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public Product getProduct() {
         return product;
@@ -80,7 +86,7 @@ public class EditarProdutosController {
                 .getScene().getWindow();
         crrStage.close();
         var stage = new Stage();
-        var scene = HomeController.CreateScene();
+        var scene = HomeController.CreateScene(user);
         stage.setScene(scene);
         stage.show();
     }
@@ -92,7 +98,7 @@ public class EditarProdutosController {
                 .getScene().getWindow();
         crrStage.close();
         var stage = new Stage();
-        var scene = HomeController.CreateScene();
+        var scene = HomeController.CreateScene(user);
         stage.setScene(scene);
         stage.show();
     }

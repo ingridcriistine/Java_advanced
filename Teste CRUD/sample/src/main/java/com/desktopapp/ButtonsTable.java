@@ -1,5 +1,6 @@
 package com.desktopapp;
 import com.desktopapp.model.Product;
+import com.desktopapp.model.User;
 
 import javafx.event.ActionEvent;
 import javafx.scene.Scene;
@@ -10,14 +11,14 @@ import javafx.stage.Stage;
 public class ButtonsTable extends Product {
     private Button btDelete;
     private Button btEditar;
-    
-    public ButtonsTable (Product product, TableView<Product> tbProd, HomeController controller) {
+
+    public ButtonsTable (Product product, TableView<ButtonsTable> tbProd, HomeController controller, User user) {
 
         this.setId(product.getId());
         this.setName(product.getName());
         this.setDescricao(product.getDescricao());
         this.setValorUnitario(product.getValorUnitario());
-        
+
         this.btDelete = new Button();
         this.btDelete.setText("❌");
         this.btDelete.setOnAction((ActionEvent event) -> {
@@ -37,7 +38,7 @@ public class ButtonsTable extends Product {
                 crrStage.close();
                 var stage = new Stage();
                 Scene scene;
-                scene = EditarProdutosController.CreateScene(product);
+                scene = EditarProdutosController.CreateScene(product, user);
                 stage.setScene(scene);
                 stage.show();
             } catch (Exception e) {
