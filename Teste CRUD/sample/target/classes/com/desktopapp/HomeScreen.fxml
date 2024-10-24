@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
@@ -42,15 +43,12 @@
                   <Font size="22.0" />
                </font>
             </Text>
-            <Button fx:id="btCadastro" alignment="CENTER" contentDisplay="RIGHT" layoutX="384.0" layoutY="38.0" mnemonicParsing="false" onMouseClicked="#cadastrarProduto" prefHeight="25.0" prefWidth="148.0" text="Cadastrar Produto">
-               <padding>
-                  <Insets right="10.0" />
-               </padding>
+            <Button fx:id="btCadastro" alignment="CENTER" contentDisplay="CENTER" layoutX="68.0" layoutY="118.0" mnemonicParsing="false" onMouseClicked="#cadastrarProduto" prefHeight="25.0" prefWidth="118.0" text="Cadastrar Produto">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
             </Button>
-            <TableView fx:id="tbProdutos" layoutX="68.0" layoutY="146.0" prefHeight="285.0" prefWidth="464.0">
+            <TableView fx:id="tbProdutos" layoutX="68.0" layoutY="176.0" prefHeight="285.0" prefWidth="464.0">
               <columns>
                 <TableColumn fx:id="colID" prefWidth="45.0" text="ID" />
                 <TableColumn fx:id="colNome" prefWidth="106.0" text="Nome" />
@@ -60,6 +58,8 @@
                   <TableColumn fx:id="colDelete" minWidth="7.0" prefWidth="55.0" text="Excluir" />
               </columns>
             </TableView>
+            <TextField fx:id="tfPesquisa" layoutX="312.0" layoutY="118.0" onInputMethodTextChanged="#pesquisar" onMouseClicked="#pesquisar" />
+            <Button fx:id="btPesquisar" layoutX="465.0" layoutY="118.0" mnemonicParsing="false" onMouseClicked="#pesquisar" text="Pesquisar" />
          </children>
       </Pane>
    </children>

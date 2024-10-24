@@ -10,7 +10,7 @@ public class App extends Application
 {
     public static void main(String[] args) {
         User user = new User();
-        user.setName("ingrid");
+        user.setName("");
         user.setPassword("");
 
         Context ctx = new Context();

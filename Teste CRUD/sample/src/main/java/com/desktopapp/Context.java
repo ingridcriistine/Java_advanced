@@ -43,11 +43,11 @@ public class Context {
         return users;
     }
 
-    public <T> List<T> findAll(Class<T> entytyClass) {
+    public <T> List<T> findAll(Class<T> entityClass) {
         EntityManager em = emf.createEntityManager();
         List<T> users = null;
         try {
-            var queryObj = em.createQuery("select p from Product p", entytyClass);
+            var queryObj = em.createQuery("select p from Product p", entityClass);
             users = queryObj.getResultList();
         } finally {
             em.close();

@@ -9,7 +9,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
@@ -36,8 +38,6 @@ public class HomeController implements Initializable {
         controller.setUser(user);
         loader.setController(controller);
 
-        System.out.println(user.getName());
-
         return scene;
     }
 
@@ -59,6 +59,12 @@ public class HomeController implements Initializable {
 
     @FXML
     private Button btCadastro;
+
+    @FXML
+    private TextField tfPesquisa;
+
+    @FXML
+    private Button btPesquisar;
 
     @FXML
     private TableView<ButtonsTable> tbProdutos;
@@ -140,6 +146,30 @@ public class HomeController implements Initializable {
         var scene = CadastroProdutosController.CreateScene(user);
         stage.setScene(scene);
         stage.show();
+    }
+
+    @FXML 
+    protected void pesquisar(MouseEvent e) throws Exception {
+        tbProdutos.setItems(resultadoPesquisa());
+    }
+
+    protected ObservableList<ButtonsTable> resultadoPesquisa() {
+        String pesquisa = tfPesquisa.getText();
+        
+        Context ctx = new Context();
+        ctx.begin();
+        
+        List<Product> lista = ctx.find(Product.class, "select p from Product p where name LIKE :arg0", "%" + pesquisa + "%");
+
+        List<ButtonsTable> buttons = lista.stream().map(n -> {
+            var btn = new ButtonsTable(n, tbProdutos, this, user);
+            return btn;
+        })
+        .collect(Collectors.toList());
+
+        return FXCollections.observableArrayList(
+            buttons
+        );
     }
 
 }

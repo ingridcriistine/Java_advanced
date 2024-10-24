@@ -33,8 +33,6 @@ public class PerfilController {
         controller.tfNome.setText(user.getName());
         controller.setUser(user);
 
-        System.out.println(user.getName());
-
         return scene;
     }
 

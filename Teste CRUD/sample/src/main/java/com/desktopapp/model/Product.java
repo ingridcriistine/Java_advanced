@@ -1,7 +1,6 @@
 package com.desktopapp.model;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import javafx.scene.control.Button;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
