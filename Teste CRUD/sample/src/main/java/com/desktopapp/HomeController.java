@@ -11,6 +11,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -151,6 +152,13 @@ public class HomeController implements Initializable {
     @FXML 
     protected void pesquisar(MouseEvent e) throws Exception {
         tbProdutos.setItems(resultadoPesquisa());
+    }
+
+    @FXML 
+    protected void pesquisarEnter(KeyEvent e) throws Exception {
+        if (e.getCode().equals(KeyCode.ENTER)) {
+            tbProdutos.setItems(resultadoPesquisa());
+        }
     }
 
     protected ObservableList<ButtonsTable> resultadoPesquisa() {

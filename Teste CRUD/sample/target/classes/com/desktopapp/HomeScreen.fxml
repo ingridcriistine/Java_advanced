@@ -58,7 +58,7 @@
                   <TableColumn fx:id="colDelete" minWidth="7.0" prefWidth="55.0" text="Excluir" />
               </columns>
             </TableView>
-            <TextField fx:id="tfPesquisa" layoutX="312.0" layoutY="118.0" onInputMethodTextChanged="#pesquisar" onMouseClicked="#pesquisar" />
+            <TextField fx:id="tfPesquisa" layoutX="312.0" layoutY="118.0" onKeyPressed="#pesquisarEnter" />
             <Button fx:id="btPesquisar" layoutX="465.0" layoutY="118.0" mnemonicParsing="false" onMouseClicked="#pesquisar" text="Pesquisar" />
          </children>
       </Pane>
