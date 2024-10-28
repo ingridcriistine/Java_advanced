@@ -91,6 +91,12 @@ public class CadastroProdutosController {
         var scene = HomeController.CreateScene(user);
         stage.setScene(scene);
         stage.show();
+
+        Alert alert = new Alert(
+                AlertType.INFORMATION,
+                "Produto cadastrado com sucesso!",
+                ButtonType.OK);
+        alert.showAndWait();
     }
 
     @FXML

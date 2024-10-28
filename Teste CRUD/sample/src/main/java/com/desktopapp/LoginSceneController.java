@@ -3,19 +3,20 @@ package com.desktopapp;
 import java.net.URL;
 
 import com.desktopapp.model.User;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 
 public class LoginSceneController {
@@ -67,6 +68,7 @@ public class LoginSceneController {
 
     @FXML
     protected void botao(MouseEvent e) throws Exception {
+        
         Context ctx = new Context();
         
         var users = ctx.find(User.class,
@@ -123,8 +125,6 @@ public class LoginSceneController {
         }
     }
 
-    String newSenha;
-
     @FXML
     protected void setSenha(MouseEvent e) throws Exception 
     {
@@ -135,7 +135,7 @@ public class LoginSceneController {
                 "SELECT u FROM User u WHERE u.name = :arg0",
                 tfUsuario.getText());
 
-        if (users.size() == 0) {
+        if (users.isEmpty()) {
             Alert alert = new Alert(
                     AlertType.ERROR,
                     "Usuário não está cadastrado!",
@@ -155,6 +155,12 @@ public class LoginSceneController {
         
         ctx.update(users.get(0));
         ctx.commit();
+
+        Alert alert = new Alert(
+                AlertType.CONFIRMATION,
+                "Senha alterada com sucesso!",
+                ButtonType.OK);
+        alert.showAndWait();
     }
 
     @FXML

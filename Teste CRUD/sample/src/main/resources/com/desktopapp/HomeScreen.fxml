@@ -11,9 +11,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="664.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.desktopapp.HomeController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="664.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.421" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.desktopapp.HomeController">
    <children>
-      <ToolBar prefHeight="40.0" prefWidth="200.0">
+      <ToolBar prefHeight="78.0" prefWidth="600.0" style="-fx-background-color: #411039;">
         <items>
             <Button fx:id="mnHome" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#updateHome" prefHeight="25.0" prefWidth="118.0" text="Produtos">
                <padding>
@@ -23,7 +23,7 @@
                   <Insets />
                </opaqueInsets>
             </Button>
-            <Button fx:id="mnPerfil" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#perfil" prefHeight="25.0" prefWidth="118.0" text="Perfil">
+            <Button fx:id="mnPerfil" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#perfil" prefHeight="25.0" prefWidth="118.0" text="Perfil" textAlignment="CENTER">
                <padding>
                   <Insets right="10.0" />
                </padding>
@@ -38,28 +38,28 @@
       </ToolBar>
       <Pane prefHeight="615.0" prefWidth="576.0">
          <children>
-            <Text layoutX="18.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Produtos" textAlignment="CENTER" x="50.0">
+            <Text layoutX="-9.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Produtos" textAlignment="CENTER" x="50.0">
                <font>
                   <Font size="22.0" />
                </font>
             </Text>
-            <Button fx:id="btCadastro" alignment="CENTER" contentDisplay="CENTER" layoutX="68.0" layoutY="118.0" mnemonicParsing="false" onMouseClicked="#cadastrarProduto" prefHeight="25.0" prefWidth="118.0" text="Cadastrar Produto">
+            <Button fx:id="btCadastro" alignment="CENTER" contentDisplay="CENTER" layoutX="41.0" layoutY="118.0" mnemonicParsing="false" onMouseClicked="#cadastrarProduto" prefHeight="31.0" prefWidth="149.0" text="Cadastrar Produto">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
             </Button>
-            <TableView fx:id="tbProdutos" layoutX="68.0" layoutY="176.0" prefHeight="285.0" prefWidth="464.0">
+            <TableView fx:id="tbProdutos" layoutX="41.0" layoutY="197.0" prefHeight="366.0" prefWidth="518.0">
               <columns>
-                <TableColumn fx:id="colID" prefWidth="45.0" text="ID" />
-                <TableColumn fx:id="colNome" prefWidth="106.0" text="Nome" />
-                  <TableColumn fx:id="colDescricao" prefWidth="89.0" text="Descrição" />
-                  <TableColumn fx:id="colPreco" prefWidth="105.0" text="Preço unitário" />
-                  <TableColumn fx:id="colEditar" minWidth="7.0" prefWidth="63.0" text="Editar" />
-                  <TableColumn fx:id="colDelete" minWidth="7.0" prefWidth="55.0" text="Excluir" />
+                <TableColumn fx:id="colID" prefWidth="45.0" style="-fx-background-color: #;" text="ID" />
+                <TableColumn fx:id="colNome" prefWidth="94.0" style="-fx-background-color: #;" text="Nome" />
+                  <TableColumn fx:id="colDescricao" prefWidth="120.0" style="-fx-background-color: #;" text="Descrição" />
+                  <TableColumn fx:id="colPreco" prefWidth="126.0" style="-fx-background-color: #;" text="Preço unitário" />
+                  <TableColumn fx:id="colEditar" minWidth="7.0" prefWidth="65.0" style="-fx-background-color: #;" text="Editar" />
+                  <TableColumn fx:id="colDelete" minWidth="7.0" prefWidth="67.0" style="-fx-background-color: #;" text="Excluir" />
               </columns>
             </TableView>
-            <TextField fx:id="tfPesquisa" layoutX="312.0" layoutY="118.0" onKeyPressed="#pesquisarEnter" />
-            <Button fx:id="btPesquisar" layoutX="465.0" layoutY="118.0" mnemonicParsing="false" onMouseClicked="#pesquisar" text="Pesquisar" />
+            <TextField fx:id="tfPesquisa" layoutX="308.0" layoutY="118.0" onKeyPressed="#pesquisarEnter" prefHeight="31.0" prefWidth="168.0" />
+            <Button fx:id="btPesquisar" layoutX="476.0" layoutY="118.0" mnemonicParsing="false" onMouseClicked="#pesquisar" text="Pesquisar" />
          </children>
       </Pane>
    </children>

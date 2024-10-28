@@ -9,21 +9,27 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="295.0" prefWidth="591.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.desktopapp.LoginSceneController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="474.0" prefWidth="591.0" style="-fx-background-color: #411039;" xmlns="http://javafx.com/javafx/8.0.421" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.desktopapp.LoginSceneController">
    <children>
-      <TextField fx:id="tfLogin" layoutX="184.0" layoutY="63.0" prefHeight="29.0" prefWidth="311.0" />
-      <Text layoutX="97.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" />
-      <Text layoutX="97.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha" />
-      <CheckBox fx:id="cbPass" layoutX="97.0" layoutY="223.0" mnemonicParsing="false" onMouseClicked="#showPass" prefHeight="17.0" prefWidth="95.0" text="Ver Senha" />
-      <Button fx:id="btLogin" layoutX="431.0" layoutY="219.0" mnemonicParsing="false" onMouseClicked="#botao" prefHeight="25.0" prefWidth="58.0" text="Logar" />
-      <TextField fx:id="tfPassShow" layoutX="184.0" layoutY="129.0" prefHeight="29.0" prefWidth="311.0" />
-      <PasswordField fx:id="tfPassHide" layoutX="184.0" layoutY="129.0" prefHeight="29.0" prefWidth="311.0" />
-      <Text fx:id="txSenha" fill="#757575" layoutX="393.0" layoutY="174.0" onMouseClicked="#showModalSenha" strokeType="OUTSIDE" strokeWidth="0.0" text="Esqueci minha senha">
+      <TextField fx:id="tfLogin" layoutX="184.0" layoutY="168.0" prefHeight="29.0" prefWidth="311.0" />
+      <Text fill="WHITE" layoutX="97.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome">
          <font>
-            <Font size="11.0" />
+            <Font name="System Bold" size="15.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="97.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Text>
+      <CheckBox fx:id="cbPass" layoutX="97.0" layoutY="385.0" mnemonicParsing="false" onMouseClicked="#showPass" prefHeight="17.0" prefWidth="95.0" text="Ver Senha" textFill="WHITE" />
+      <Button fx:id="btLogin" layoutX="436.0" layoutY="380.0" mnemonicParsing="false" onMouseClicked="#botao" prefHeight="25.0" prefWidth="58.0" text="Logar" />
+      <TextField fx:id="tfPassShow" layoutX="184.0" layoutY="235.0" prefHeight="29.0" prefWidth="311.0" />
+      <PasswordField fx:id="tfPassHide" layoutX="184.0" layoutY="235.0" prefHeight="29.0" prefWidth="311.0" />
+      <Text fx:id="txSenha" fill="#c3b8b8" layoutX="387.0" layoutY="285.0" onMouseClicked="#showModalSenha" strokeType="OUTSIDE" strokeWidth="0.0" text="Esqueci minha senha">
+         <font>
+            <Font name="System Bold Italic" size="11.0" />
          </font>
       </Text>
-      <Button fx:id="btCadastro" layoutX="340.0" layoutY="219.0" mnemonicParsing="false" onMouseClicked="#cadastro" text="Criar conta" />
+      <Button fx:id="btCadastro" layoutX="321.0" layoutY="380.0" mnemonicParsing="false" onMouseClicked="#cadastro" text="Criar conta" />
       <Pane fx:id="modalSenha" layoutX="131.0" layoutY="19.0" opacity="0.94" prefHeight="250.0" prefWidth="329.0" style="-fx-background-color: white; -fx-border-color: gray; -fx-background-radius: 10; visibility: false;">
          <children>
             <TextField fx:id="tfNewSenha" layoutX="105.0" layoutY="83.0" prefHeight="29.0" prefWidth="206.0" />
@@ -39,5 +45,10 @@
             <DropShadow />
          </effect>
       </Pane>
+      <Text fill="WHITE" layoutX="256.0" layoutY="82.0" lineSpacing="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOGIN">
+         <font>
+            <Font name="Arial Black" size="22.0" />
+         </font>
+      </Text>
    </children>
 </Pane>

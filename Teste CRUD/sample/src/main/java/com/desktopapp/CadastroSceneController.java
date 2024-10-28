@@ -81,6 +81,12 @@ public class CadastroSceneController {
         var scene = LoginSceneController.CreateScene();
         stage.setScene(scene);
         stage.show();
+
+        Alert alert = new Alert(
+                AlertType.INFORMATION,
+                "Usuário cadastrado com sucesso!",
+                ButtonType.OK);
+        alert.showAndWait();
     }
 
     boolean changed = false;

@@ -1,24 +1,33 @@
 package com.desktopapp;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.net.URL;
+import java.util.ResourceBundle;
+
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 import com.desktopapp.model.User;
 
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import javafx.scene.Parent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 
-public class PerfilController {
+public class PerfilController implements Initializable {
 
     public static Scene CreateScene(User user) throws Exception {
 
@@ -31,8 +40,9 @@ public class PerfilController {
         PerfilController controller = loader.getController();
         controller.tfID.setText(String.valueOf(user.getId()));
         controller.tfNome.setText(user.getName());
+        
         controller.setUser(user);
-
+        
         return scene;
     }
 
@@ -103,9 +113,28 @@ public class PerfilController {
     @FXML
     protected Button btCancelar;
 
+    
+    
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        String url = "https://www.pngall.com/wp-content/uploads/5/Profile-Avatar-PNG-Picture.png";
+        Image image = new Image(url, true);
+        ImgPerfil.setImage(image);
+    }
+
     @FXML
     protected void alterarFoto(MouseEvent e) throws Exception {
+        String url = "https://cdn3.iconfinder.com/data/icons/information-technologies/2048/9322_-_Female_Profile-512.png";
+        Image image = new Image(url, true);
+        ImgPerfil.setImage(image);
 
+        var crrStage = (Stage) btAlterarFoto
+        .getScene().getWindow();
+        crrStage.close();
+        var stage = new Stage();
+        var scene = PerfilController.CreateScene(user);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
@@ -124,12 +153,51 @@ public class PerfilController {
 
     @FXML
     protected void editarInfo(MouseEvent e) throws Exception {
+        Context ctx = new Context();
+        ctx.begin();
+
+        user.setName(tfEditarNome.getText());
         
+        ctx.update(user);
+        ctx.commit();
+
+        var crrStage = (Stage) btEditarInfo
+        .getScene().getWindow();
+        crrStage.close();
+        var stage = new Stage();
+        var scene = PerfilController.CreateScene(user);
+        stage.setScene(scene);
+        stage.show();
+        
+        Alert alert = new Alert(
+                AlertType.INFORMATION,
+                "Alteração concluída com sucesso!",
+                ButtonType.OK);
+        alert.showAndWait();
     }
 
     @FXML
     protected void excluirConta(MouseEvent e) throws Exception {
 
+        Alert alert = new Alert(
+                AlertType.WARNING,
+                "Tem certeza que deseja apagar a sua conta?",
+                ButtonType.CANCEL, ButtonType.OK);
+        var option = alert.showAndWait();
+
+        if(option.get() == ButtonType.OK) {
+            Context ctx = new Context();
+            ctx.begin();
+            ctx.delete(user);
+            ctx.commit();
+    
+            var crrStage = (Stage) btExcluirConta.getScene().getWindow();
+            crrStage.close();
+            var stage = new Stage();
+            var scene = LoginSceneController.CreateScene();
+            stage.setScene(scene);
+            stage.show();
+        } 
     }
 
     @FXML
@@ -167,9 +235,16 @@ public class PerfilController {
 
         users.get(0).setPassword(tfConfirmSenha.getText());
         modalSenha.setVisible(false);
+        campoInfo.setVisible(true);
         
         ctx.update(users.get(0));
         ctx.commit();
+
+        Alert alert = new Alert(
+                AlertType.INFORMATION,
+                "Senha alterada com sucesso!",
+                ButtonType.OK);
+        alert.showAndWait();
     }
 
     @FXML
@@ -181,12 +256,21 @@ public class PerfilController {
 
     @FXML
     protected void sair(MouseEvent e) throws Exception {
-        Stage crrStage = (Stage) btSair
-                .getScene()
-                .getWindow();
+        Alert alert = new Alert(
+                AlertType.WARNING,
+                "Tem certeza que deseja sair?",
+                ButtonType.CANCEL, ButtonType.OK);
+        var option = alert.showAndWait();
 
-        Scene newScene = LoginSceneController.CreateScene();
-        crrStage.setScene(newScene);
+        if(option.get() == ButtonType.OK) {
+            Stage crrStage = (Stage) btSair
+                    .getScene()
+                    .getWindow();
+    
+            Scene newScene = LoginSceneController.CreateScene();
+            crrStage.setScene(newScene);
+        }
+
     }
 
     @FXML
@@ -208,4 +292,6 @@ public class PerfilController {
         Scene newScene = PerfilController.CreateScene(this.user);
         crrStage.setScene(newScene);
     }
+
+   
 }

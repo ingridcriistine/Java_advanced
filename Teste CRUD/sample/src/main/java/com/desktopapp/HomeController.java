@@ -1,10 +1,19 @@
 package com.desktopapp;
 
 import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
 import com.desktopapp.model.Product;
 import com.desktopapp.model.User;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -15,16 +24,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.scene.Parent;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-
-import java.util.List;
-import java.util.ResourceBundle;
-import java.util.stream.Collectors;
 
 public class HomeController implements Initializable {
 
