@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="664.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.desktopapp.PaginaInicialController">
+   <children>
+      <ToolBar prefHeight="78.0" prefWidth="600.0" style="-fx-background-color: #411039;">
+        <items>
+            <Button fx:id="mnHome" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#updateHome" prefHeight="25.0" prefWidth="118.0" text="Pagina inicial">
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+            <Button fx:id="mnPerfil" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#perfil" prefHeight="25.0" prefWidth="118.0" text="Perfil" textAlignment="CENTER">
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+        </items>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </ToolBar>
+      <Pane prefHeight="615.0" prefWidth="576.0">
+         <children>
+            <Text fx:id="txtOla" layoutX="-9.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ola, nome" textAlignment="CENTER" x="50.0">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <Button fx:id="btNovaMensagem" alignment="CENTER" contentDisplay="CENTER" layoutX="41.0" layoutY="118.0" mnemonicParsing="false" onMouseClicked="#novaMensagem" prefHeight="25.0" prefWidth="149.0" text="Nova mensagem">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+            <TableView fx:id="tbMensagens" layoutX="41.0" layoutY="197.0" prefHeight="366.0" prefWidth="518.0">
+              <columns>
+                <TableColumn fx:id="colID" prefWidth="40.0" style="-fx-background-color: #;" text="ID" />
+                  <TableColumn fx:id="colTitulo" prefWidth="182.0" style="-fx-background-color: #;" text="Título" />
+                  <TableColumn fx:id="colPessoa" minWidth="0.0" prefWidth="118.0" style="-fx-background-color: #;" text="Enviado por:" />
+                  <TableColumn fx:id="colVerMensagem" minWidth="0.0" prefWidth="111.0" style="-fx-background-color: #;" text="Ver mensagem" />
+                  <TableColumn fx:id="colDelete" minWidth="0.0" prefWidth="66.0" style="-fx-background-color: #;" text="Remover" />
+              </columns>
+            </TableView>
+            <TextField fx:id="tfPesquisa" layoutX="308.0" layoutY="118.0" onKeyPressed="#pesquisarEnter" prefHeight="17.0" prefWidth="168.0" />
+            <Button fx:id="btPesquisar" layoutX="476.0" layoutY="118.0" mnemonicParsing="false" onMouseClicked="#pesquisar" prefHeight="25.0" prefWidth="83.0" text="Pesquisar" />
+         </children>
+      </Pane>
+   </children>
+</VBox>
